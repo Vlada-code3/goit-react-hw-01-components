@@ -1,15 +1,24 @@
 import React from 'react'
-import Statistics from '../statistics/Statistics'
-import statistics from '../data/statistical-data.json'
-import User from './users/User'
+import data from '../data/index.js';
+import FriendList from './friendList/FriendList.js';
+import Profile from './profile/Profile'
+import Statistics from './statistics/Statistics.js';
+import TransactionHistory from './transaction/TransactionHistory.js';
 
 
-const App = ({user}) => {
+
+
+
+const App = () => {
     return (
         <div>
 
-       <User user={user}/>
+      <Profile user={data.user}/>
       
+      <Statistics title="Upload stats" stats={data.statistic} />
+            <FriendList friends={data.friends} />
+            <TransactionHistory items={data.transaction}/>
+
       
        </div>
     );
